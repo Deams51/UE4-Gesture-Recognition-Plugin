@@ -40,10 +40,8 @@ void UVRGestureRecognitionComponent::TickComponent( float DeltaTime, ELevelTick 
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
-	if (GetOwner() && GestureRecognizer && AttachParent)
+	if (GetOwner() && GestureRecognizer)
 	{
-		//FVector Offset = AttachParent->RelativeRotation.RotateVector(OffsetInput);
-		//FVector Position = AttachParent->GetRelativeTransform().GetLocation() + Offset;
 		FVector Position = this->GetComponentLocation();
 		GestureRecognizer->Tick(Position);
 	}
